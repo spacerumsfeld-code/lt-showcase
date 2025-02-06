@@ -5,6 +5,10 @@
 
 declare module "sst" {
   export interface Resource {
+    "ConnectionTable": {
+      "name": string
+      "type": "sst.aws.Dynamo"
+    }
     "LtApiKey": {
       "type": "sst.sst.Secret"
       "value": string
@@ -21,6 +25,15 @@ declare module "sst" {
     "Web": {
       "type": "sst.aws.Nextjs"
       "url": string
+    }
+    "WebsocketApi": {
+      "managementEndpoint": string
+      "type": "sst.aws.ApiGatewayWebSocket"
+      "url": string
+    }
+    "ZenQuoteApiUrl": {
+      "type": "sst.sst.Secret"
+      "value": string
     }
   }
 }
