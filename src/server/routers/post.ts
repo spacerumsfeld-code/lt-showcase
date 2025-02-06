@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
+import { createTRPCRouter, publicProcedure } from "~/server/_internals/trpc";
 
 // Mocked DB
 interface Post {
@@ -18,6 +18,7 @@ export const postRouter = createTRPCRouter({
   hello: publicProcedure
     .input(z.object({ text: z.string() }))
     .query(({ input }) => {
+      console.log("wow so cool", input);
       return {
         greeting: `Hello ${input.text}`,
       };
