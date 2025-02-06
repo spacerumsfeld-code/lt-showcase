@@ -13,7 +13,8 @@
     "lint:fix": "next lint --fix",
     "preview": "next build && next start",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test-integration": "vitest"
   },
   "dependencies": {
     "@aws-sdk/client-apigatewaymanagementapi": "^3.743.0",
@@ -40,6 +41,8 @@
     "sst": "3.7.15",
     "superjson": "^2.2.1",
     "tailwind-merge": "^3.0.1",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.0.5",
     "zod": "^3.23.3"
   },
   "devDependencies": {

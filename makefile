@@ -6,4 +6,10 @@ dev:
 
 lint:
 	npx pnpm run lint
+
+typecheck:
+	npx pnpm run typecheck
+
+test:
+	npx pnpm run test-integration
 	
