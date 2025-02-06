@@ -12,26 +12,32 @@ interface AlbumDisplayProps {
 export const AlbumDisplay = ({ albums }: AlbumDisplayProps) => {
   const [selectedAlbum, setSelectedAlbum] = useState<IAlbum | null>(null);
 
-//   const handleAlbumClick = (album: IAlbum) => {
-//     setSelectedAlbum(album);
-//   };
+  const handleAlbumClick = (album: IAlbum) => {
+    setSelectedAlbum(album);
+  };
 
   if (selectedAlbum) {
     const slides = selectedAlbum.photos.map((photo) => ({
       title: photo.title,
-      button: "View Full Size",
+      button: "Go To Link",
       src: photo.url,
     }));
 
     return (
-      <div className="w-full">
+      <div className="w-full max-w-4xl mx-auto z-10 px-16 h-[85vh] flex flex-col pt-4">
         <button
           onClick={() => setSelectedAlbum(null)}
-          className="mb-8 px-4 py-2 text-white bg-purple-600 rounded-lg hover:bg-purple-700 transition-colors"
+          className="mb-4 px-4 py-2 text-white bg-purple-600 rounded-lg hover:bg-purple-700 transition-colors"
         >
           ← Back to Albums
         </button>
-        <Carousel slides={slides} />
+        <div className="flex-1 min-h-0 relative">
+          <div className="absolute inset-0 flex items-center justify-center pb-20">
+            <div className="w-full h-[50vh]">
+              <Carousel slides={slides} />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -41,6 +47,7 @@ export const AlbumDisplay = ({ albums }: AlbumDisplayProps) => {
       {albums.map((album) => (
             <div
             key={album.albumId}
+            onClick={() => handleAlbumClick(album)}
             className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 hover:bg-white/20 z-10 cursor-pointer"
           >
             <h3 className="text-2xl font-bold">

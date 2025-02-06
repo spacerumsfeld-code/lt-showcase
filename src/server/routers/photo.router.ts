@@ -16,8 +16,10 @@ export const photoRouter = createTRPCRouter({
         });
       }
 
+      const sortedAlbums = albums!.sort((a, b) => a.albumId - b.albumId);
+
       return {
-        albums,
+        albums: sortedAlbums,
       };
     }),
 });

@@ -69,7 +69,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
     <div className="[perspective:1200px] [transform-style:preserve-3d]">
       <li
         ref={slideRef}
-        className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[70vmin] h-[70vmin] mx-[4vmin] z-10 "
+        className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[50vmin] h-[50vmin] mx-[4vmin] z-10"
         onClick={() => handleSlideClick(index)}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
@@ -92,12 +92,14 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
           }}
         >
           <Image
-            className="absolute inset-0 w-[120%] h-[120%] object-cover opacity-100 transition-opacity duration-600 ease-in-out"
+            className="absolute inset-0 w-[120%] h-[120%] object-cover opacity-100 transition-opacity duration-500 ease-in-out"
             style={{
               opacity: current === index ? 1 : 0.5,
             }}
             alt={title}
             src={src}
+            height={300}
+            width={200}
             onLoad={imageLoaded}
             loading="eager"
             decoding="sync"
@@ -177,7 +179,7 @@ export function Carousel({ slides }: CarouselProps) {
 
   return (
     <div
-      className="relative w-[70vmin] h-[70vmin] mx-auto"
+      className="relative w-full h-full mx-auto"
       aria-labelledby={`carousel-heading-${id}`}
     >
       <ul
@@ -197,7 +199,7 @@ export function Carousel({ slides }: CarouselProps) {
         ))}
       </ul>
 
-      <div className="absolute flex justify-center w-full top-[calc(100%+1rem)]">
+      <div className="absolute flex justify-center w-full -bottom-16">
         <CarouselControl
           type="previous"
           title="Go to previous slide"
