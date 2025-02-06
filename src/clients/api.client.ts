@@ -6,7 +6,7 @@ import { cache } from "react";
 
 import { createCaller, type AppRouter } from "~/server/root";
 import { createTRPCContext } from "~/server/_internals/trpc";
-import { createQueryClient } from "~/trpc/query-client";
+import { createQueryClient } from "~/server/trpc/query-client";
 
 /**
  * This wraps the `createTRPCContext` helper and provides the required context for the tRPC API when

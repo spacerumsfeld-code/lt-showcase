@@ -1,9 +1,10 @@
 import type {} from '../.sst/platform/config'
 
+import { allSecrets } from './secret'
 import { server } from './server'
 
 const web = new sst.aws.Nextjs('Web', {
-    link: [server],
+    link: [...allSecrets, server],
     dev: {
         autostart: true,
         command: 'pnpm run dev',

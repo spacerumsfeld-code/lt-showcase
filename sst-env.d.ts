@@ -9,6 +9,10 @@ declare module "sst" {
       "type": "sst.sst.Secret"
       "value": string
     }
+    "LtApiUrl": {
+      "type": "sst.sst.Secret"
+      "value": string
+    }
     "Server": {
       "name": string
       "type": "sst.aws.Function"
