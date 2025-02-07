@@ -12,4 +12,6 @@ typecheck:
 
 test:
 	npx pnpm run test-integration
-	
+
+deploy:
+	npx sst deploy --stage production

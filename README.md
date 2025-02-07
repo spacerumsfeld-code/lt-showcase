@@ -1,29 +1,31 @@
-# Create T3 App
+# LT Showcase
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+Hello and welcome to my showcase. I hope you have a good time. I ran afoul of time an angry girlfriend was wondering why I was still cloistered away in the office this evening, so didn't quite get to all I wanted to, but I hope I have submitted something worthwhile all the same.
 
-## What's next? How do I make an app with this?
+# How to evaluate
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+The application is live at 
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+https://dl0arth2h8hvs.cloudfront.net
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+for your viewing pleasure!
 
-## Learn More
+# Key Features.
+1. Server-first data fetching pattern and display in a next-gen frontend.
+2. Search functionality for photos (on the "title" key).
+3. Zen quote of the day delivered to the application every minute on the minute and displayed in a toast (and logged in console) via Websocket.
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+# Key technical points:
+1. Domain-driven design ("/core' directory and "services" to keep business logic separate) to make code organized and scalable.
+2. Full stack type safety with Typescript.
+3. AWS infrastructure spun up with SST, infrastructure as code.
+4. Next-gen frontend with React+NextJS and Tailwind.
+5. Integration test suite
+6. AWS components used: AWS Lambda for serverless API and to host Next.js application, EventBridge to make cron job for zen quote feature, ApiGateway for websocket connection, DynamoDB to store connectionIds, and sensible secrets management /w S3 (SST handles that for you, encyrpting the secrets and putting them in a bucket).
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+# Stretch Goals, not quite achieved
+1. Github action to lint, typecheck, test, then deploy code. Almost made it!
+2. Image optimization. I wanted to do a second-pass to get these images loading in faster.
+3. E2E test suite. I wanted to use Playwright to do a series of automated tests on different browsers.
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+# Thanks for viewing!

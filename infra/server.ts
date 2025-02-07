@@ -5,7 +5,7 @@ import { websocket } from './websocket';
 
 export const server = new sst.aws.Function("Server", {
     url: true,
-    handler: "src/clients/api.client",
+    handler: "src/server/_internals/handler.handler",
     link: [...allSecrets, websocket]
   });
 

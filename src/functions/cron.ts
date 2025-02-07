@@ -10,6 +10,7 @@ export const handler: APIGatewayProxyHandler = async () => {
         console.error('Error fetching connections:', getConnectionsError)
         return { statusCode: 500, body: 'Error fetching connections' }
     }
+    console.log('Connections:', connections)
 
     const [quote, quoteError] = await handleAsync(quoteService.getRandomQuote())
     if (quoteError) {
