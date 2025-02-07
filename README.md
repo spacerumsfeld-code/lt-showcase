@@ -27,5 +27,6 @@ for your viewing pleasure!
 1. Github action to lint, typecheck, test, then deploy code. Almost made it!
 2. Image optimization. I wanted to do a second-pass to get these images loading in faster.
 3. E2E test suite. I wanted to use Playwright to do a series of automated tests on different browsers.
+4. Mobile compatibility.
 
 # Thanks for viewing!
